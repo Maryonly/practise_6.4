@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Реєстрація користувача</title>
+    <style>
+        body {
+            background-color: #EEEEFF;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        table {
+            width: 100%;
+        }
+        td {
+            padding: 10px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"],
+        input[type="reset"] {
+            width: 48%;
+            padding: 10px;
+            margin: 10px 1%;
+            border: none;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        input[type="reset"] {
+            background-color: #f44336;
+        }
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <h1>Форма для реєстрації користувача</h1>
+    <form method="GET" name="form1">
+        <table>
+            <tr>
+                <td align="right">Ім'я:</td>
+                <td align="right"><input type="text" name="NM" size="11"></td>
+            </tr>
+            <tr>
+                <td align="right">Пароль:</td>
+                <td align="right"><input type="password" id="pass1" size="11"></td>
+            </tr>
+            <tr>
+                <td align="right">Повторіть Пароль:</td>
+                <td align="right"><input type="password" id="pass2" size="11"></td>
+            </tr>
+            <tr align="center">
+                <td align="left"><input type="submit" value="Передати" onclick="perevirka()"></td>
+                <td align="right"><input type="reset" value="Очистити"></td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function perevirka() {
+            var userpass1 = document.getElementById('pass1').value;
+            var userpass2 = document.getElementById('pass2').value;
+
+            if (userpass1 === userpass2) {
+                window.open("index_after.html");
+            } else {
+                alert("Паролі не співпадають!");
+            }
+        }
+    </script>
+</body>
+</html>
